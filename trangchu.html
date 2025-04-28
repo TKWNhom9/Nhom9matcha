@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="ad-banner">
+        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Matsuya">    
+        </div>   
+        <ul class="navigation">
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="#">GIỚI THIỆU</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SẢN PHẨM</a>
+                <div class="dropdown-content">
+                    <!-- Trang chủ -->
+                    <a href="sanpham.html#matcha" onclick="showProducts('matcha', event)">Trà Matcha</a>
+                    <a href="sanpham.html#houjicha" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
+                    <a href="sanpham.html#banh" onclick="showProducts('banh', event)">Bánh Matcha</a>
+                    <a href="sanpham.html#bot" onclick="showProducts('bot', event)">Bột Matcha</a>
+                    <a href="sanpham.html#dungcu" onclick="showProducts('dungcu', event)">Dụng cụ</a>
+                    
+
+                </div>
+            </li>            
+            <li><a href="#">TIN TỨC</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+            <li><a href="#">KHÁC</a></li>
+        </ul>
+        
+
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button class="search-btn"></button>
+        </div>
+    </nav>
+</header>
+
+<div class="slider">
+    <div class="slides">
+        <div class="slide active">
+            <img src="images/banner.jpg" alt="Slider 1">
+        </div>
+        <div class="slide">
+            <img src="images/banner.jpg" alt="Slider 2">
+        </div>
+        <div class="slide">
+            <img src="images/banner3.png" alt="Slider 3">
+        </div>
+        <div class="slide">
+            <img src="images/banner4.jpg" alt="Slider 4">
+        </div>
+    </div>
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+<div class="image-gallery">
+    <div class="image-item">
+        <img src="images/A1.jpg" class="large-image"> <!-- Hình ảnh 1 -->
+        <p></p>
+    </div>
+    <div class="vertical-group">
+        <div class="small-image-item">
+            <img src="images/A2.jpg"> <!-- Hình ảnh 2 -->
+            <p></p>
+        </div>
+        <div class="small-image-item">
+            <img src="images/A2.jpg"> <!-- Hình ảnh 3 -->
+            <p></p>
+        </div>
+    </div>
+    <div class="small-image-item2">
+        <img src="images/matchachuoi.jpg" class="large-image-4"> <!-- Hình ảnh 4 -->
+        <p></p>
+        <button class="try-button">Thử ngay</button> <!-- Nút "Thử ngay" -->
+     </div>
+</div>
+
+<div class="best-seller">
+    <b class="highlight-text">SẢN PHẨM NỔI BẬT</b>
+</div>
+<!-- Popup hình ảnh -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <img src="images/pop.jpg" alt="Khuyến mãi đặc biệt" class="popup-image">
+        <button class="close-btn" onclick="closePopup()">×</button>
+    </div>
+</div>
+
+<script>
+    // Hiển thị popup sau khi tải trang
+    window.addEventListener('load', function() {
+        document.getElementById('popup').style.display = 'flex';
+    });
+    
+    // Hàm đóng popup
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
