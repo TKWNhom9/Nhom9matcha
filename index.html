@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Drink Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="ad-banner">
+            <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+        </div>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <div class="logo">
+                    <img src="images/logo2.jpg" alt="Logo Matsuya">    
+                </div>   
+                <ul class="navigation">
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="#">GIỚI THIỆU</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">SẢN PHẨM</a>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="showProducts('matcha', event)">Trà Matcha</a>
+                            <a href="#" onclick="showProducts('houjicha', event)">Trà Houjicha</a>
+                            <a href="#" onclick="showProducts('banh', event)">Bánh Matcha</a>
+                            <a href="#" onclick="showProducts('bot', event)">Bột Matcha</a>
+                            <a href="#" onclick="showProducts('dungcu', event)">Dụng cụ</a>
+                        </div>
+                    </li>            
+                    <li><a href="#">TIN TỨC</a></li>
+                    <li><a href="#">LIÊN HỆ</a></li>
+                    <li><a href="#">KHÁC</a></li>
+                </ul>
+            </div>
+    
+            <div class="navbar-right">
+               
+                <form action="/search" method="get" class="search-container">
+                    <button class="btn" type="button" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input class="input" type="text" name="query" placeholder="Tìm kiếm..." />
+                </form>
+             <div class="icon-bar">
+                    <button class="icon-button">
+                      <img src="images/giohang.png" alt="User" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                      <img src="images/yeuthich.png" alt="Cart" class="icon-img">
+                    </button>
+                    <button class="icon-button">
+                        <img src="images/tk.png" alt="Cart" class="icon-img">
+                      </button>
+                  </div>
+            </div>
+        </nav>
+    </header>
+    
+        
+
+
+<div class="slider-container">
+    <div class="slider">
+      <div class="slide active">
+        <img src="images/banner2.jpg" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="images/thaybanner.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="images/banner3.png" alt="Slide 3">
+      </div>
+    </div>
+  </div>  
+
+</div>
+
+<div class="image-gallery">
+    <div class="image-item">
+        <img src="images/anh1.jpg" class="large-image"> <!-- Hình ảnh 1 -->
+        <p></p>
+    </div>
+    <div class="vertical-group">
+        <div class="small-image-item">
+            <img src="images/anh2.jpg"> <!-- Hình ảnh 2 -->
+            <p></p>
+        </div>
+        <div class="small-image-item">
+            <img src="images/anh2.jpg"> <!-- Hình ảnh 3 -->
+            <p></p>
+        </div>
+    </div>
+    <div class="small-image-item2">
+        <img src="images/A2.jpg" class="large-image-4"> <!-- Hình ảnh 4 -->
+        <p></p>
+        <button class="try-button" onclick="goToProducts()">Thử ngay</button>
+         </div>
+</div>
+<!--danhmuc trangchu-->
+
+<div class="product-categories-and-reviews">
+    <div class="product-categories">
+        <h2>Sản phẩm của Matsuya</h2>
+        <div class="category-container">
+            <a href="#" onclick="navigateToCategory('matcha', event)">
+                <img src="images/dmmatcha.jpg" alt="Trà Matcha">
+                <p></p>
+            </a>
+            <a href="#" onclick="navigateToCategory('houjicha', event)">
+                <img src="images/dmhouji.jpg" alt="Trà Houjicha">
+                <p></p>
+            </a>
+            <a href="#" onclick="navigateToCategory('banh', event)">
+                <img src="images/dmbanh.jpg" alt="Bánh Matcha">
+                <p></p>
+            </a>
+            <a href="#" onclick="navigateToCategory('bot', event)">
+                <img src="images/dmbot.jpg" alt="Bột Matcha">
+                <p></p>
+            </a>
+            <a href="#" onclick="navigateToCategory('dungcu', event)">
+                <img src="images/dmdungcuu.jpg" alt="Dụng cụ pha">
+                <p></p>
+            </a>
+        </div>
+    </div>
+
+   
+    </div>
+</div>
+
+
+
+<!-- Popup hình ảnh -->
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <img src="images/pop.jpg" alt="Khuyến mãi đặc biệt" class="popup-image">
+        <button class="close-btn" onclick="closePopup()">×</button>
+    </div>
+</div>
+
+<!--Khuyến mãi-->
+<section class="promo-section">
+    <h2 class="promo-title">KHUYẾN MÃI</h2>
+    <div class="promo-content">
+        <div class="promo-products">
+            <div class="promo-item">
+                <img src="images/cb1.jpg" alt="Matcha Delight Trio">
+                <p class="product-name">Matcha Delight Trio</p>
+                <p class="price"><del>120.000đ</del> <strong>110.000đ</strong></p>
+            </div>
+            <div class="promo-item">
+                <img src="images/cb2.jpg" alt="Matcha Bliss Trio">
+                <p class="product-name">Matcha Bliss Trio</p>
+                <p class="price"><del>125.000đ</del> <strong>120.000đđ</strong></p>
+            </div>
+        </div>
+        <div class="promo-banner">
+            <img src="images/anh3.jpg" alt="Christmas Sale Banner">
+        </div>
+    </div>
+</section>
+
+<!-- Phần sản phẩm nổi bật -->
+<section class="featured-products">
+    <h2>Sản phẩm nổi bật</h2>
+    <div class="product-special-grid">
+      <div class="product-special">
+        <img src="images/matcha/latte.jpg" alt="Matcha Latte">
+        <h3>Matcha Latte</h3>
+        <p>45.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/matcha/dau.jpg" alt="Matcha Dâu">
+        <h3>Matcha Dâu</h3>
+        <p>49.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/matcha/xoai.jpg" alt="Matcha Xoài">
+        <h3>Matcha Xoài</h3>
+        <p>49.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/matcha/cotcoco.jpg" alt="Matcha Cốt Dừa">
+        <h3>Matcha Cốt Dừa</h3>
+        <p>52.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/houjilatte.jpg" alt="Houjicha Latte">
+        <h3>Houjicha Latte</h3>
+        <p>48.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/banhkem.jpg" alt="Bánh Matcha Cheesecake">
+        <h3>Bánh Matcha Cheesecake</h3>
+        <p>42.000đ</p>
+      </div>
+      <div class="product-special">
+        <img src="images/mochikem.jpg" alt="Mochi Matcha">
+        <h3>Matcha mochi kem lạnh</h3>
+        <p>49.000đ</p>
+    </div>
+    <div class="product-special">
+        <img src="images/macaron.jpg" alt="Macaron">
+        <h3>Macaron Matcha</h3>
+        <p>49.000đ</p>
+    </div>
+  </section>
+ <div class="reviews">
+        <h2></h2>
+        <div class="review-item active">
+            <blockquote>
+                "Matcha ở đây thơm, cao cấp. Chưa tìm được quán nào bán matcha ngon hơn quán này."
+                <footer>- Anh Quân</footer>
+            </blockquote>
+        </div>
+        <div class="review-item">
+            <blockquote>
+                "Dịch vụ tuyệt vời và đồ uống rất ngon! Tôi sẽ quay lại."
+                <footer>- Minh Anh</footer>
+            </blockquote>
+        </div>
+        <div class="review-item">
+            <blockquote>
+                "Không gian quán rất thoải mái, thích hợp để làm việc."
+                <footer>- Hương Giang</footer>
+            </blockquote>
+        </div>
+        <div class="review-item">
+            <blockquote>
+                "Bánh matcha ở đây là số một! Thực sự rất ngon."
+                <footer>- Tuấn Kiệt</footer>
+            </blockquote>
+        </div>
+        <div class="review-item">
+            <blockquote>
+                "Giá cả hợp lý, chất lượng vượt trội! Rất hài lòng."
+                <footer>- Lan Hương</footer>
+            </blockquote>
+        </div>
+    </div>
+ 
+
+
+    <footer class="footer">
+        <div class="footer-top">
+          <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+          </div>
+          <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+          </div>
+        </div>
+      
+        <div class="footer-content">
+          <div class="footer-section logo-contact">
+            <img src="images/logo2.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+              <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+              <div class="map-container">
+                <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s" 
+    width="300" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+    </iframe>
+             
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+                <p>Chính sách bảo mật</p>
+                <p>Chính sách hoàn trả</p>
+                <p>Điều khoản sử dụng</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+          </div>
+        </div>
+      </footer>
+<!-- Nút lên đầu trang -->
+<button onclick="scrollToTop()" id="btnTop" title="Lên đầu trang">↑</button>
+
+<script>
+//danh muc//
+function navigateToCategory(category, event) {
+    event.preventDefault(); // Ngăn trình duyệt tải lại trang
+    localStorage.setItem('selectedCategory', category); // Lưu danh mục vào localStorage
+    window.location.href = 'sanpham.html'; // Điều hướng đến trang sản phẩm
+}
+    //Nút thử ngay
+    function goToProducts() {
+    window.location.href = 'sanpham.html'; // Thay đổi 'sanpham.html' nếu cần
+}
+   // Slider
+   let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+  const slider = document.querySelector('.slider');
+  slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function changeSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides; // Vòng lặp về slide đầu tiên khi đạt slide cuối cùng
+  showSlide(currentSlide);
+}
+
+// Tự động chuyển slide mỗi 5 giây
+setInterval(changeSlide, 5000);
+
+// Hiển thị slide đầu tiên khi tải trang
+showSlide(currentSlide);
+
+// Hiển thị popup sau khi tải trang
+    window.addEventListener('load', function() {
+        document.getElementById('popup').style.display = 'flex';
+    });
+    
+    // Hàm đóng popup
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+    //REVIEWS
+    let currentReview = 0; // Đánh giá hiện tại
+const reviews = document.querySelectorAll('.review-item'); // Lấy tất cả đánh giá
+
+function showNextReview() {
+    reviews[currentReview].classList.remove('active'); // Ẩn đánh giá hiện tại
+    currentReview = (currentReview + 1) % reviews.length; // Chuyển đến đánh giá tiếp theo
+    reviews[currentReview].classList.add('active'); // Hiển thị đánh giá tiếp theo
+}
+
+// Hiển thị đánh giá đầu tiên
+reviews[currentReview].classList.add('active');
+
+// Chuyển đổi giữa các đánh giá mỗi 5 giây
+setInterval(showNextReview, 5000);
+
+//slider cho danh mục//
+function showProducts(category, event) {
+    event.preventDefault(); // Ngăn trình duyệt tải lại trang
+    localStorage.setItem('selectedCategory', category); // Lưu danh mục vào localStorage
+    window.location.href = 'sanpham.html'; // Điều hướng đến trang sản phẩm
+}
+//Nút tìm kiếm//
+function toggleSearch() {
+    const input = document.querySelector('.input');
+    input.classList.toggle('active'); // Thêm hoặc xóa lớp active
+    if (input.classList.contains('active')) {
+        input.focus(); // Tự động focus vào ô nhập
+    }
+}
+
+// Thêm sự kiện để gửi form khi nhấn Enter
+document.querySelector('.input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        this.form.submit(); // Gửi form khi nhấn Enter
+    }
+});
+
+//Lên đầu trang:  
+// // Hiển thị nút khi cuộn xuống 100px
+  window.onscroll = function() {
+    let btn = document.getElementById("btnTop");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Hàm cuộn lên đầu
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+    </script>
+</body>
+</html>
