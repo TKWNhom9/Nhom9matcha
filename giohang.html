@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Giỏ hàng - Matsuya Matcha</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+
+<body>
+
+<!-- HEADER: giống login.html -->
+<header>
+    <div class="ad-banner">
+        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Matsuya">    
+        </div>   
+        <ul class="navigation">
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SẢN PHẨM</a>
+                <div class="dropdown-content">
+                    <a href="sanpham.html#matcha">Trà Matcha</a>
+                    <a href="sanpham.html#houjicha">Trà Houjicha</a>
+                    <a href="sanpham.html#banh">Bánh Matcha</a>
+                    <a href="sanpham.html#bot">Bột Matcha</a>
+                    <a href="sanpham.html#dungcu">Dụng cụ</a>
+                </div>
+            </li>            
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            <li><a href="giohang.html">GIỎ HÀNG</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button class="search-btn"></button>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN: NỘI DUNG GIỎ HÀNG -->
+<main>
+    <h1 class="page-title">GIỎ HÀNG CỦA BẠN</h1>
+
+    <section class="cart-container" style="max-width: 1000px; margin: 20px auto; padding: 20px;">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead style="background-color: #eaf2ec;">
+                <tr>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Sản phẩm</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Giá</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Số lượng</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Thành tiền</th>
+                    <th style="padding: 10px; border: 1px solid #ccc;">Xóa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tbody id="cart-items">
+                     <!-- Chưa có sản phẩm nào -->
+                </tbody>
+
+                <!-- Có thể thêm nhiều sản phẩm khác -->
+            </tbody>
+        </table>
+
+        <!-- Tổng tiền -->
+        <div style="text-align: right; margin-top: 20px;">
+            <strong class="cart-total" style="font-size: 18px;">Tổng cộng: 0đ</strong>
+
+        </div>
+
+        <!-- Nút thanh toán -->
+        <div style="text-align: right; margin-top: 10px;">
+            
+            <button class="pay-btn" style="padding: 12px 20px; background-color: #2c5f2d; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">THANH TOÁN</button>
+
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER: giống login.html -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+        </div>
+        <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-section logo-contact">
+            <img src="images/logo.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+                <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.620803649952!2d105.82537677387555!3d21.007832088499686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac806cfc0845%3A0x3848505bd3b9490f!2zMTIgUC4gQ2jDuWEgQuG7mWMsIFF1YW5nIFRydW5nLCDEkOG7kW5nIMSQYSwgSMOgIE7hu5lpIDEwMDAwMCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1746035458690!5m2!1sen!2s"
+                        width="250" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+            <p>Chính sách bảo mật</p>
+            <p>Chính sách hoàn trả</p>
+            <p>Điều khoản sử dụng</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+        </div>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

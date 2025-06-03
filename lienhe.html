@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Liên hệ - Matsuya Matcha</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="ad-banner">
+        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Matsuya">
+        </div>
+        <ul class="navigation">
+            <li><a href="index.html">TRANG CHỦ</a></li>
+            <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SẢN PHẨM</a>
+                <div class="dropdown-content">
+                    <a href="sanpham.html#matcha">Trà Matcha</a>
+                    <a href="sanpham.html#houjicha">Trà Houjicha</a>
+                    <a href="sanpham.html#banh">Bánh Matcha</a>
+                    <a href="sanpham.html#bot">Bột Matcha</a>
+                    <a href="sanpham.html#dungcu">Dụng cụ</a>
+                </div>
+            </li>
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            <li><a href="giohang.html">GIỎ HÀNG</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button class="search-btn"></button>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN - FORM LIÊN HỆ -->
+<main>
+    <h2 style="text-align: center; margin: 30px 0; color: #2c5f2d;">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+
+    <form id="contactForm" style="max-width: 500px; margin: auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        <label for="name">Họ tên:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="title">Tiêu đề:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="message">Nội dung:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" style="margin-top: 20px; padding: 12px 20px; background-color: #2c5f2d; color: #fff; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px;">Gửi liên hệ</button>
+    </form>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+        </div>
+        <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-section logo-contact">
+            <img src="images/logo.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+                <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+            <p>Chính sách bảo mật</p>
+            <p>Chính sách hoàn trả</p>
+            <p>Điều khoản sử dụng</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SCRIPT xử lý form -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const title = document.getElementById('title').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !title || !message) {
+            alert('Vui lòng điền đầy đủ thông tin!');
+            return;
+        }
+
+        const contactData = {
+            name,
+            email,
+            title,
+            message,
+            time: new Date().toLocaleString()
+        };
+
+        localStorage.setItem('contactFormData', JSON.stringify(contactData));
+
+        alert('Liên hệ của bạn đã được gửi thành công!');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>

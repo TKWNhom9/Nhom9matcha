@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Thanh toán - Matsuya Matcha</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .checkout-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .checkout-form, .cart-summary {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+        }
+        .checkout-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .checkout-form input, .checkout-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .qr-code {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER giống các trang -->
+<header>
+    <div class="ad-banner">
+        <marquee>Nhập mã MATSUYANF để nhận ưu đãi 50K cho đơn hàng trên 200k!</marquee>
+    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo Matsuya">    
+        </div>   
+        <ul class="navigation">
+            <li><a href="trangchu.html">TRANG CHỦ</a></li>
+            <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">SẢN PHẨM</a>
+                <div class="dropdown-content">
+                    <a href="sanpham.html#matcha">Trà Matcha</a>
+                    <a href="sanpham.html#houjicha">Trà Houjicha</a>
+                    <a href="sanpham.html#banh">Bánh Matcha</a>
+                    <a href="sanpham.html#bot">Bột Matcha</a>
+                    <a href="sanpham.html#dungcu">Dụng cụ</a>
+                </div>
+            </li>            
+            <li><a href="tintuc.html">TIN TỨC</a></li>
+            <li><a href="lienhe.html">LIÊN HỆ</a></li>
+            <li><a href="giohang.html">GIỎ HÀNG</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Tìm kiếm..." class="search-input">
+            <button class="search-btn"></button>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN: FORM THANH TOÁN -->
+<main>
+    <h1 class="page-title">THÔNG TIN THANH TOÁN</h1>
+
+    <div class="checkout-container">
+        <!-- Thông tin khách hàng -->
+        <div class="checkout-form">
+            <label>Họ tên</label>
+            <input type="text" placeholder="Nhập họ tên">
+
+            <label>Giới tính</label>
+            <input type="text" placeholder="Nam/Nữ">
+
+            <label>Địa chỉ</label>
+            <input type="text" placeholder="Nhập địa chỉ">
+
+            <label>Điện thoại</label>
+            <input type="text" placeholder="Nhập số điện thoại">
+
+            <label>Email</label>
+            <input type="email" placeholder="Nhập email">
+
+            <label>Ngày sinh</label>
+            <input type="date">
+
+            <label>CMND/CCCD</label>
+            <input type="text" placeholder="Nhập số CMND/CCCD">
+
+            <!-- Hình thức thanh toán -->
+            <label style="font-weight: bold; display: block; margin-bottom: 10px;">Hình thức thanh toán</label>
+
+<div style="display: flex; flex-direction: column; gap: 10px;">
+
+    <label style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Tiền mặt</span>
+        <input type="radio" name="payment" value="cash">
+    </label>
+
+    <label style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Chuyển khoản</span>
+        <input type="radio" name="payment" value="bank">
+    </label>
+
+    <label style="display: flex; justify-content: space-between; align-items: center;">
+        <span>Ship COD</span>
+        <input type="radio" name="payment" value="cod">
+    </label>
+
+</div>
+
+
+
+            <!-- QR code -->
+            <div class="qr-code" id="qrCode">
+                <p>Vui lòng quét mã QR để chuyển khoản:</p>
+                <img src="images/QRcode.jpg" alt="QR Code" style="width: 200px;">
+            </div>
+
+            <!-- Ghi chú đơn hàng -->
+            <label>Ghi chú đơn hàng</label>
+            <textarea rows="4" placeholder="Bạn có ghi chú gì cho đơn hàng không?"></textarea>
+
+            <!-- Upload ảnh xác nhận thanh toán -->
+            <label>Tải lên ảnh xác nhận thanh toán (nếu có)</label>
+            <input type="file" accept="image/*">
+        </div>
+
+        <!-- Giỏ hàng -->
+<div class="cart-summary">
+    <h3>Giỏ hàng</h3>
+
+    <div id="checkout-cart-items">
+        <!-- Sẽ tự động render giỏ hàng ở đây -->
+    </div>
+
+    <p id="checkout-cart-total"><strong>Tổng thành tiền:</strong> 0đ</p>
+
+    <label>Mã Khuyến mãi</label>
+    <input type="text" placeholder="Nhập mã">
+
+    <button style="margin-top: 10px; padding: 10px 20px; background-color: #2c5f2d; color: white; border: none; border-radius: 5px;">
+        Xác nhận
+    </button>
+</div>
+
+    </div>
+</main>
+
+<!-- FOOTER như cũ -->
+<footer class="footer">
+    <div class="footer-top">
+        <div class="newsletter">
+            <i class="icon-email">✉️</i>
+            <span>Hãy để chúng mình lắng nghe góp ý của cậu!</span>
+        </div>
+        <div class="subscribe">
+            <input type="email" placeholder="Nhập email của bạn">
+            <button>Đăng ký</button>
+        </div>
+    </div>
+
+    <div class="footer-content">
+        <div class="footer-section logo-contact">
+            <img src="images/logo.jpg" alt="Matsuya Logo" class="logo">
+            <ul>
+                <li><i class="icon">📍</i> 12 phố Chùa Bộc, phường Quang Trung, quận Đống Đa, Hà Nội</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+            <ul>
+                <li><i class="icon">📧</i> matsuya2025@gmail.com</li>
+                <li><i class="icon">📞</i> 0394889183</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>THÔNG TIN</h3>
+            <p>Chính sách bảo mật</p>
+            <p>Chính sách hoàn trả</p>
+            <p>Điều khoản sử dụng</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>GIỜ MỞ CỬA</h4>
+            <p>Từ 9:00 - 21:30 tất cả các ngày trong tuần<br>(bao gồm cả các ngày lễ, ngày Tết).</p>
+            <h4>GÓP Ý, KHIẾU NẠI</h4>
+            <p><i class="icon">📞</i> 1900 6750</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Script xử lý hiện QR -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const paymentRadios = document.querySelectorAll('input[name="payment"]');
+        const qrCode = document.getElementById('qrCode');
+
+        paymentRadios.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                if (this.value === 'bank') {
+                    qrCode.style.display = 'block';
+                } else {
+                    qrCode.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

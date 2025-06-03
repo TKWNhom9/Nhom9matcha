@@ -862,4 +862,138 @@ blockquote {
   .icon {
     margin-right: 5px;
   }
+
+
+
+
+  /* FORM LIÊN HỆ - SẮP XẾP DỌC */
+#contactForm label,
+#contactForm input,
+#contactForm textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#contactForm input, 
+#contactForm textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contactForm button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #2c5f2d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+#contactForm button:hover {
+    background-color: #244d24;
+}
+
 /*Điều hướng*/
+
+
+
+
+/* Contact Page Styles - Phần Liên Hệ  
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    color: #2c5f2d;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #2c5f2d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #3c7f3d;
+}
+
+.contact-info {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: #2c5f2d;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}*/
+/* CSS Bảng giỏ hàng */
+#cart-items td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#cart-items img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.pay-btn {
+    padding: 12px 20px;
+    background-color: #2c5f2d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background-color: #244d24;
+}
